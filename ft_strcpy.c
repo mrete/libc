@@ -6,19 +6,19 @@
 /*   By: mrete <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/23 16:40:16 by mrete             #+#    #+#             */
-/*   Updated: 2015/10/23 18:02:29 by mrete            ###   ########.fr       */
+/*   Updated: 2015/10/24 16:14:41 by mrete            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int i;
 	i = 0;
 	while (src[i] != '\0')
 	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return(dest);
+	dst[i] = '\0';
+	return(dst);
 }

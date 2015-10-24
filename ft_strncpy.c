@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   strncpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrete <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/23 13:28:00 by mrete             #+#    #+#             */
-/*   Updated: 2015/10/24 14:00:56 by mrete            ###   ########.fr       */
+/*   Created: 2015/10/24 10:04:26 by mrete             #+#    #+#             */
+/*   Updated: 2015/10/24 10:38:07 by mrete            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string.h>
 
-size_t	ft_strlen(const char *s)
+char	*ft_strncpy(char *dst, const char src, size_t n)
 {
-	int i;
+	size_t i;
 
-	i = 0;
-	while (s[i] != '\0')
+	while (i < n && src[i] != '\0')
+	{
+		dst[i] = src[i];
 		i++;
-	return (i);
+	}
+	while (i < n)
+		dst[i] = '\0';
+	return dst;
 }

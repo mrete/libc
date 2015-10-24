@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrete <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/23 13:28:00 by mrete             #+#    #+#             */
-/*   Updated: 2015/10/24 14:00:56 by mrete            ###   ########.fr       */
+/*   Created: 2015/10/24 16:15:25 by mrete             #+#    #+#             */
+/*   Updated: 2015/10/24 16:55:24 by mrete            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string.h>
 
-size_t	ft_strlen(const char *s)
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	int i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	  int i;
+	  int j;
+    i = 0;
+    if (*s1 == *s2)
+        return ((char *)(s1));
+    while (s1[i] != '\0')
+    {
+        j = 0;
+        while (s1[i + j] == s2[j] && s2[j] != '\0')
+            j++;
+        if (s2[j] == '\0')
+            return ((char *)(s1 + i));
+        else
+            i++;
+    }
+    return NULL;
 }
